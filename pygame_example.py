@@ -84,14 +84,14 @@ goals = []
 #     for w in data["walls"]:
 #         walls.append(GameSprite(w["x"], w["y"], w["w"], w["h"], (255,255,255)))
 
-# with open('walls.txt', 'r') as f:
-#     line = f.readline()
-#     while line:
-#         splitline = line.split(',')
-#         for i in range(len(splitline)):
-#             splitline[i] = int(splitline[i].strip(' ,()\n'))
-#         walls.append(GameSprite(splitline[0], splitline[1], splitline[2], splitline[3], (255,255,255)))
-#         line = f.readline()
+with open('walls.txt', 'r') as f:
+    line = f.readline()
+    while line:
+        splitline = line.split(',')
+        for i in range(len(splitline)):
+            splitline[i] = int(splitline[i].strip(' ,()\n'))
+        walls.append(GameSprite(splitline[0], splitline[1], splitline[2], splitline[3], (255,255,255)))
+        line = f.readline()
 
 with Image.open('walls2.png') as im:
     clrs = im.getpalette()
